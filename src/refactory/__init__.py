@@ -9,11 +9,25 @@ __version__ = "0.1.0"
 __author__ = "Evan Volgas"
 
 from .core.review_engine import ReviewEngine
-from .core.models import ReviewResult, AgentScore, RecommendationPriority
+from .core.models import (
+    ReviewResult,
+    AgentScore,
+    RecommendationPriority,
+    AnalysisRequest,
+    CodeContext,
+    AgentType,
+)
+from .agents import ArchitectAgent
 
 __all__ = [
+    "__version__",
+    "__author__",
     "ReviewEngine",
-    "ReviewResult", 
+    "ReviewResult",
     "AgentScore",
     "RecommendationPriority",
+    "AnalysisRequest",
+    "CodeContext",
+    "AgentType",
+    "ArchitectAgent",
 ]

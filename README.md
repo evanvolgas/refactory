@@ -1,85 +1,107 @@
 # Refactory 🔍
 
-> **⚠️ UNDER ACTIVE DEVELOPMENT**  
-> This project is currently in early development stages. Features are being actively implemented and the API may change frequently. Not recommended for production use yet.
+**Multi-agent AI code analysis system** - Get comprehensive code reviews from specialized AI agents.
 
-A multi-agent code analysis system that performs comprehensive code reviews using AI agents specialized in different aspects of code quality.
+## Overview
 
-## 🎯 What It Does
+Refactory deploys three specialized AI agents that analyze your code like a senior engineering team:
 
-Refactory simulates a senior engineering team by deploying five specialized AI agents that analyze your code from different perspectives:
+- **🏗️ Architect** - Design patterns, SOLID principles, code structure
+- **🔒 Security** - Vulnerabilities, injection attacks, secure practices
+- **⚡ Performance** - Algorithmic complexity, optimization opportunities
 
-- **🏗️ Architect Agent** - Design patterns, structure, SOLID principles
-- **🔒 Security Agent** - Vulnerabilities, secure coding practices  
-- **⚡ Performance Agent** - Efficiency, complexity, scalability
-- **📚 Documentation Agent** - Code clarity, comments, API docs
-- **🎨 Style Agent** - Consistency, naming, formatting
+Each agent provides scored feedback (0-100) with actionable recommendations.
 
-Each agent provides scored feedback (0-100) with specific, actionable recommendations.
+## Status
 
-## 🚧 Current Status
+**Currently Available:** Architect, Security, and Performance agents
+**Coming Soon:** Documentation and Style agents
 
-**Phase 1: Foundation** (In Progress)
-- [x] Project design and architecture planning
-- [x] Core documentation
-- [ ] PydanticAI framework setup
-- [ ] Basic agent structure
-- [ ] Python language support
-- [ ] Initial scoring system
+## Quick Start
 
-## 📋 Planned Features
+### Installation
+```bash
+git clone <repository-url>
+cd refactory
+uv venv .venv && uv pip install -e .
+```
 
-### Core Functionality
-- Multi-language support (Python, JavaScript, TypeScript, Java, C++, Go)
-- Intelligent conflict resolution between agent recommendations
-- Comprehensive scoring and reporting system
-- Before/after code examples with improvement suggestions
+### Configuration
+Create a `.env` file:
+```bash
+# Recommended: Best value for most users
+REFACTORY_MODEL=gemini-2.0-flash-exp
+GEMINI_API_KEY=your_api_key_here
+```
 
-### Integration Options
-- CLI tool for local development
-- GitHub Actions for CI/CD
-- REST API for custom integrations
-- Multiple export formats (JSON, Markdown, PDF)
+**Supported Models:**
+- **Google Gemini**: `gemini-2.0-flash-exp`, `gemini-1.5-pro`, `gemini-1.5-flash`
+- **Anthropic Claude**: `anthropic:claude-4-opus`, `anthropic:claude-4-sonnet`
+- **OpenAI GPT**: `openai:gpt-4`, `openai:gpt-4.1`, `openai:gpt-4o`
+- **Groq**: `groq:llama-3.3-70b`, `groq:deepseek-r1`
 
-### Advanced Capabilities
-- Context-aware analysis based on project type
-- Framework-specific best practices
-- Incremental analysis for large codebases
-- Configurable analysis depth
+### Usage
+```bash
+# Analyze a single file
+refactory analyze examples/sample_code.py
 
-## 🛠️ Technology Stack
+# Analyze entire codebase
+refactory analyze src/ --include "*.py" --exclude ".venv"
 
-- **Framework**: PydanticAI for agent orchestration
-- **Code Analysis**: Tree-sitter for AST parsing
-- **Output**: Structured Pydantic models
-- **Languages**: Python (expanding to others)
+# Security-focused analysis
+refactory analyze . --focus security --format detailed
 
-## 📖 Documentation
+# Multiple agents
+refactory analyze code.py --focus security --focus performance
 
-- [Design Document](./DESIGN.md) - Comprehensive technical specification
-- [Architecture Overview](./DESIGN.md#architecture) - System design and agent roles
-- [Implementation Roadmap](./DESIGN.md#implementation-roadmap) - Development phases
+# Show available models
+refactory models
+```
 
-## 🤝 Contributing
+### Example Output
+```
+🔍 Refactory Analysis Results
+┏━━━━━━━━━━━━━━━━┳━━━━━━━━━━━━━━━┳━━━━━━━━┳━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┓
+┃ File           ┃ Overall Score ┃ Issues ┃ Top Issue                                             ┃
+┡━━━━━━━━━━━━━━━━╇━━━━━━━━━━━━━━━╇━━━━━━━━╇━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━━┩
+│ sample_code.py │      45       │   3    │ Missing input validation                              │
+│ auth.py        │      25       │   8    │ SQL injection vulnerability                          │
+│ utils.py       │      75       │   1    │ Inefficient algorithm complexity                     │
+└────────────────┴───────────────┴────────┴───────────────────────────────────────────────────────┘
+```
 
-This project is in early development. While we're not ready for external contributions yet, we welcome:
+## Features
 
-- Feedback on the design and architecture
-- Suggestions for additional analysis capabilities
-- Ideas for integration improvements
+### Analysis Capabilities
+- **Single Files**: Analyze individual Python files
+- **Entire Codebases**: Recursive directory analysis with filtering
+- **Selective Agents**: Choose specific agents (security, performance, architecture)
+- **Multiple Formats**: Table, JSON, or detailed output
 
-## 📄 License
+### Agent Specializations
+- **🏗️ Architect**: SOLID principles, design patterns, code organization
+- **🔒 Security**: SQL injection, XSS, hardcoded secrets, authentication flaws
+- **⚡ Performance**: Algorithmic complexity, memory efficiency, optimization opportunities
 
-[License to be determined]
+## Documentation
 
-## 🔄 Development Updates
+- **[CLI Reference](docs/CLI.md)** - Complete command-line interface guide
+- **[User Guide](docs/README.md)** - Getting started and configuration
+- **[Design Document](DESIGN.md)** - Technical architecture and roadmap
 
-This README will be updated regularly as development progresses. Check back for:
-- Implementation milestones
-- API documentation
-- Installation instructions
-- Usage examples
+## Examples
+
+```bash
+# Security audit of web application
+refactory analyze webapp/ --focus security --format detailed
+
+# Performance review of algorithms
+refactory analyze algorithms/ --focus performance --include "*.py"
+
+# Full analysis with custom output
+refactory analyze src/ --format json --output report.json
+```
 
 ---
 
-**Built for defensive security and code improvement purposes only.**
+**Built for code improvement and security analysis.**
