@@ -1,13 +1,15 @@
 # Refactory Architecture: Hybrid Local + Cloud Analysis System
 
-Comprehensive architecture for cost-effective, intelligent code analysis using local pattern recognition and cloud-based AI agents.
+**⚠️ Experimental Research Project**
+
+Architecture design for cost-effective code analysis experiment using local pattern recognition and cloud-based AI agents for small codebases.
 
 ## 🏗️ System Overview
 
-Refactory uses a **hybrid architecture** that combines:
-- **Local embedding models** for fast, free pattern recognition
-- **Cloud LLM agents** for deep analysis when needed
-- **Intelligent routing** to minimize costs while maximizing quality
+This experimental system uses a **hybrid architecture** that combines:
+- **Local embedding models** for basic pattern recognition
+- **Cloud LLM agents** for complex analysis when needed
+- **Simple routing** to reduce costs for small codebase analysis
 
 ## 📊 Architecture Diagram
 
@@ -362,25 +364,25 @@ Month 6: 95% local, 5% cloud = $2.50/analysis
 
 ## 🎯 Key Benefits
 
-### Cost Efficiency
-- **95% cost reduction** for routine analysis
-- **Pay only for complex cases** that need expert analysis
-- **Predictable budgets** with cost controls
+### Potential Cost Benefits
+- **Significant cost reduction** for routine analysis (experimental)
+- **Pay only for complex cases** that need cloud analysis
+- **Basic budget controls**
 
-### Speed
-- **Sub-second analysis** for pattern-matched files
+### Speed Benefits
+- **Fast analysis** for pattern-matched files
 - **No network latency** for local processing
-- **Parallel processing** of multiple files
+- **Simple parallel processing**
 
-### Privacy
-- **Code never leaves your machine** for pattern matching
-- **Sensitive files** can be analyzed entirely locally
-- **Gradual cloud adoption** based on comfort level
+### Privacy Benefits
+- **Code stays local** for pattern matching
+- **Sensitive files** can be analyzed locally
+- **Optional cloud analysis** based on confidence
 
-### Quality
-- **Learns your codebase** and gets smarter over time
-- **Expert cloud analysis** when needed
-- **Consistent pattern enforcement** across projects
+### Learning Potential
+- **May learn codebase patterns** over time (experimental)
+- **Cloud analysis** for complex cases
+- **Basic pattern recognition** for small projects
 
 ## 🤖 Local Models vs Cloud Agents: Division of Labor
 
@@ -594,4 +596,4 @@ Accuracy: 99% (full expert analysis)
 }
 ```
 
-This architecture provides the best of both worlds: **intelligent, fast, cheap local analysis** with **expert cloud backup** when needed.
+This experimental architecture aims to provide: **basic, fast, cheap local analysis** with **cloud backup** when needed for small codebases.

@@ -1,8 +1,8 @@
 # Hybrid Local + Cloud Review Strategy for Evan's Projects
 
-**⚠️ EXPERIMENTAL ALPHA SOFTWARE - UNDER DEVELOPMENT**
+**⚠️ PERSONAL RESEARCH PROJECT**
 
-Prototype analysis plan for three codebases using experimental hybrid local embedding models + cloud AI agents. This is a proof-of-concept exploring cost efficiency improvements.
+Experimental analysis plan for three small codebases using hybrid local embedding models + cloud AI agents. Personal experiment in cost-effective code review.
 
 ## 📊 Project Overview
 
@@ -70,7 +70,7 @@ Month 12: $5 (95% local analysis)
 
 ### What is Knowledge Base Building?
 
-**Knowledge base building** is an experimental process of teaching Refactory to understand your specific codebase patterns, architectural decisions, and common issues. Think of it as creating a "memory" of your code that could potentially get smarter over time.
+**Knowledge base building** is an experimental process of teaching Refactory to recognize patterns in your specific codebase. The goal is to reduce expensive cloud API calls by using local pattern matching for routine analysis.
 
 #### Phase 1: Initial Learning ($30 one-time cost)
 ```bash

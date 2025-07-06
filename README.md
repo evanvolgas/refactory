@@ -2,25 +2,25 @@
 
 ![Refactory Logo](refactory_logo_white_bg.png)
 
-**⚠️ ALPHA SOFTWARE - EXPERIMENTAL PROOF OF CONCEPT**
+**⚠️ EXPERIMENTAL ALPHA SOFTWARE**
 
-**Multi-agent AI code analysis system** - Experimental system exploring comprehensive code reviews from specialized AI agents.
+**AI-assisted code review tool** - Personal experiment in using AI agents for focused code analysis.
 
 ## Overview
 
-Refactory is a prototype that deploys three specialized AI agents to analyze your code:
+Refactory is a prototype tool that uses AI to review small codebases:
 
-- **🏗️ Architect** - Design patterns, SOLID principles, code structure
-- **🔒 Security** - Vulnerabilities, injection attacks, secure practices
-- **⚡ Performance** - Algorithmic complexity, optimization opportunities
+- **🏗️ Architect** - Basic design pattern and structure checks
+- **🔒 Security** - Common vulnerability detection
+- **⚡ Performance** - Obvious algorithmic issues
 
-Each agent provides scored feedback (0-100) with actionable recommendations.
+Provides scored feedback as a "second pair of eyes" for code review.
 
 ## Status
 
-**⚠️ Under Active Development:** This is experimental alpha software
-**Currently Available:** Architect, Security, and Performance agents
-**In Development:** Hybrid local + cloud architecture for cost reduction
+**⚠️ Personal Research Project:** Experimental software for small codebases
+**Works For:** Individual files and small projects (~100 files)
+**Experimenting With:** Cost reduction through local pattern matching
 
 ## Quick Start
 
@@ -45,22 +45,19 @@ GEMINI_API_KEY=your_api_key_here
 - **OpenAI GPT**: `openai:gpt-4`, `openai:gpt-4.1`, `openai:gpt-4o`
 - **Groq**: `groq:llama-3.3-70b`, `groq:deepseek-r1`
 
-### Usage (Experimental)
+### Basic Usage
 ```bash
 # Analyze a single file
 refactory analyze examples/sample_code.py
 
-# Analyze entire codebase (experimental)
+# Analyze a small project
 refactory analyze src/ --include "*.py" --exclude ".venv"
 
-# Security-focused analysis
-refactory analyze . --focus security --format detailed
+# Focus on security issues
+refactory analyze auth.py --focus security
 
-# Multiple agents
+# Check multiple areas
 refactory analyze code.py --focus security --focus performance
-
-# Show available models
-refactory models
 ```
 
 ### Example Output
@@ -75,18 +72,18 @@ refactory models
 └────────────────┴───────────────┴────────┴───────────────────────────────────────────────────────┘
 ```
 
-## Features (Experimental)
+## What It Does
 
-### Analysis Capabilities
+### Basic Capabilities
 - **Single Files**: Analyze individual Python files
-- **Entire Codebases**: Recursive directory analysis with filtering (experimental)
-- **Selective Agents**: Choose specific agents (security, performance, architecture)
-- **Multiple Formats**: Table, JSON, or detailed output
+- **Small Projects**: Works best with ~100 files or less
+- **Focused Analysis**: Choose specific areas (security, performance, architecture)
+- **Simple Output**: Table or JSON format
 
-### Agent Specializations (Prototype)
-- **🏗️ Architect**: SOLID principles, design patterns, code organization
-- **🔒 Security**: SQL injection, XSS, hardcoded secrets, authentication flaws
-- **⚡ Performance**: Algorithmic complexity, memory efficiency, optimization opportunities
+### What Each Agent Checks
+- **🏗️ Architect**: Basic SOLID principles, obvious design issues
+- **🔒 Security**: Common vulnerabilities like SQL injection, hardcoded secrets
+- **⚡ Performance**: Obvious inefficiencies, algorithmic complexity issues
 
 ## Documentation
 
@@ -94,19 +91,19 @@ refactory models
 - **[User Guide](docs/README.md)** - Getting started and configuration
 - **[Design Document](DESIGN.md)** - Technical architecture and roadmap
 
-## Examples (Experimental)
+## Example Use Cases
 
 ```bash
-# Security audit of web application (experimental)
-refactory analyze webapp/ --focus security --format detailed
+# Check auth code for security issues
+refactory analyze auth.py --focus security
 
-# Performance review of algorithms (experimental)
-refactory analyze algorithms/ --focus performance --include "*.py"
+# Review new feature for design issues
+refactory analyze new_feature/ --focus architect
 
-# Full analysis with custom output (experimental)
-refactory analyze src/ --format json --output report.json
+# Quick performance check
+refactory analyze data_processor.py --focus performance
 ```
 
 ---
 
-**⚠️ Experimental software for code improvement and security analysis research.**
+**⚠️ Personal research project - use at your own risk.**

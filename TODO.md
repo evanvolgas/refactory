@@ -1,8 +1,8 @@
 # Refactory Hybrid Local + Cloud Implementation TODO
 
-**⚠️ ALPHA SOFTWARE - UNDER ACTIVE DEVELOPMENT**
+**⚠️ PERSONAL RESEARCH PROJECT**
 
-Implementation roadmap for experimental hybrid architecture using local embedding models + cloud AI agents. This is a proof-of-concept system exploring cost reduction from $600/month to $10-20/month.
+Implementation roadmap for experimental hybrid architecture using local embedding models + cloud AI agents. This is a proof-of-concept exploring cost reduction for small codebase analysis.
 
 ## 🎯 Phase 1: Local Embedding Infrastructure
 
@@ -211,4 +211,4 @@ Implementation roadmap for experimental hybrid architecture using local embeddin
 - [CLI Documentation](docs/CLI.md) - Current CLI capabilities
 - [Design Document](DESIGN.md) - Overall system architecture
 
-This experimental implementation aims to transform Refactory from an expensive per-file analysis tool into an intelligent, learning system that could potentially provide expert-level insights at near-zero marginal cost.
+This experimental implementation aims to make Refactory more cost-effective for small codebase analysis through local pattern matching, reducing reliance on expensive cloud API calls.

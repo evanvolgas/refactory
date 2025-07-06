@@ -1,6 +1,8 @@
 # Refactory CLI Documentation
 
-Complete guide to using the Refactory command-line interface for multi-agent code analysis.
+**⚠️ Personal Research Project**
+
+Basic guide to using the Refactory command-line interface for small codebase analysis.
 
 ## Table of Contents
 
@@ -19,11 +21,11 @@ Complete guide to using the Refactory command-line interface for multi-agent cod
 # Analyze a single file
 refactory analyze examples/sample_code.py
 
-# Analyze entire codebase
+# Analyze small project
 refactory analyze src/ --include "*.py"
 
 # Security-focused analysis
-refactory analyze . --focus security --exclude ".venv"
+refactory analyze auth.py --focus security
 
 # Show available models
 refactory models
@@ -33,14 +35,14 @@ refactory models
 
 ### `refactory analyze`
 
-Analyze code files or directories with AI-powered agents.
+Analyze code files or small directories with AI agents.
 
 ```bash
 refactory analyze [OPTIONS] PATH
 ```
 
 **Arguments:**
-- `PATH`: File or directory to analyze (required)
+- `PATH`: File or small directory to analyze (works best with ~100 files or less)
 
 ### `refactory models`
 
@@ -90,9 +92,9 @@ Control which agents analyze your code with the `--focus` option.
 
 | Agent | Focus Area | Use Case |
 |-------|------------|----------|
-| `architect` | Design patterns, SOLID principles | Code structure review |
-| `security` | Vulnerabilities, injection attacks | Security audit |
-| `performance` | Optimization, complexity | Performance tuning |
+| `architect` | Basic design patterns, obvious structure issues | Simple code structure review |
+| `security` | Common vulnerabilities, obvious security issues | Basic security check |
+| `performance` | Obvious inefficiencies, algorithmic complexity | Simple performance check |
 
 ### Usage
 
@@ -163,10 +165,10 @@ refactory analyze app.py --focus security --format detailed
 refactory analyze app.py --output security_report.json --format json
 ```
 
-### Project Analysis
+### Small Project Analysis
 
 ```bash
-# Entire Python project
+# Small Python project
 refactory analyze . --include "*.py" --exclude ".venv" --exclude "__pycache__"
 
 # Source code only
@@ -176,42 +178,39 @@ refactory analyze src/ --include "*.py"
 refactory analyze . --include "*.py" --exclude "test_*" --exclude "*_test.py"
 ```
 
-### Specialized Analysis
+### Focused Analysis
 
 ```bash
-# Security audit
-refactory analyze webapp/ \
+# Basic security check
+refactory analyze auth.py \
   --focus security \
   --format detailed \
-  --output security_audit.json
+  --output security_check.json
 
-# Performance review
-refactory analyze algorithms/ \
+# Simple performance review
+refactory analyze data_processor.py \
   --focus performance \
-  --include "*.py" \
-  --depth thorough
+  --include "*.py"
 
-# Architecture assessment
-refactory analyze microservices/ \
+# Basic architecture check
+refactory analyze new_feature/ \
   --focus architect \
   --exclude "tests/" \
   --format detailed
 ```
 
-### CI/CD Integration
+### Simple Automation
 
 ```bash
-# Quick security check
-refactory analyze . \
+# Basic security check
+refactory analyze auth.py \
   --focus security \
-  --include "*.py" \
-  --exclude ".venv" \
   --format json \
   --output security_report.json
 
-# Exit code indicates issues found
-if refactory analyze src/ --focus security --format json > /dev/null; then
-  echo "Security check passed"
+# Simple check with exit code
+if refactory analyze auth.py --focus security --format json > /dev/null; then
+  echo "Basic security check passed"
 else
   echo "Security issues found"
   exit 1
