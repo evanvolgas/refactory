@@ -1,10 +1,14 @@
 # Refactory 🔍
 
-**Multi-agent AI code analysis system** - Get comprehensive code reviews from specialized AI agents.
+![Refactory Logo](refactory_logo_white_bg.png)
+
+**⚠️ ALPHA SOFTWARE - EXPERIMENTAL PROOF OF CONCEPT**
+
+**Multi-agent AI code analysis system** - Experimental system exploring comprehensive code reviews from specialized AI agents.
 
 ## Overview
 
-Refactory deploys three specialized AI agents that analyze your code like a senior engineering team:
+Refactory is a prototype that deploys three specialized AI agents to analyze your code:
 
 - **🏗️ Architect** - Design patterns, SOLID principles, code structure
 - **🔒 Security** - Vulnerabilities, injection attacks, secure practices
@@ -14,8 +18,9 @@ Each agent provides scored feedback (0-100) with actionable recommendations.
 
 ## Status
 
+**⚠️ Under Active Development:** This is experimental alpha software
 **Currently Available:** Architect, Security, and Performance agents
-**Coming Soon:** Documentation and Style agents
+**In Development:** Hybrid local + cloud architecture for cost reduction
 
 ## Quick Start
 
@@ -40,12 +45,12 @@ GEMINI_API_KEY=your_api_key_here
 - **OpenAI GPT**: `openai:gpt-4`, `openai:gpt-4.1`, `openai:gpt-4o`
 - **Groq**: `groq:llama-3.3-70b`, `groq:deepseek-r1`
 
-### Usage
+### Usage (Experimental)
 ```bash
 # Analyze a single file
 refactory analyze examples/sample_code.py
 
-# Analyze entire codebase
+# Analyze entire codebase (experimental)
 refactory analyze src/ --include "*.py" --exclude ".venv"
 
 # Security-focused analysis
@@ -70,15 +75,15 @@ refactory models
 └────────────────┴───────────────┴────────┴───────────────────────────────────────────────────────┘
 ```
 
-## Features
+## Features (Experimental)
 
 ### Analysis Capabilities
 - **Single Files**: Analyze individual Python files
-- **Entire Codebases**: Recursive directory analysis with filtering
+- **Entire Codebases**: Recursive directory analysis with filtering (experimental)
 - **Selective Agents**: Choose specific agents (security, performance, architecture)
 - **Multiple Formats**: Table, JSON, or detailed output
 
-### Agent Specializations
+### Agent Specializations (Prototype)
 - **🏗️ Architect**: SOLID principles, design patterns, code organization
 - **🔒 Security**: SQL injection, XSS, hardcoded secrets, authentication flaws
 - **⚡ Performance**: Algorithmic complexity, memory efficiency, optimization opportunities
@@ -89,19 +94,19 @@ refactory models
 - **[User Guide](docs/README.md)** - Getting started and configuration
 - **[Design Document](DESIGN.md)** - Technical architecture and roadmap
 
-## Examples
+## Examples (Experimental)
 
 ```bash
-# Security audit of web application
+# Security audit of web application (experimental)
 refactory analyze webapp/ --focus security --format detailed
 
-# Performance review of algorithms
+# Performance review of algorithms (experimental)
 refactory analyze algorithms/ --focus performance --include "*.py"
 
-# Full analysis with custom output
+# Full analysis with custom output (experimental)
 refactory analyze src/ --format json --output report.json
 ```
 
 ---
 
-**Built for code improvement and security analysis.**
+**⚠️ Experimental software for code improvement and security analysis research.**
